@@ -43,6 +43,21 @@ gulp.task('vendor', function() {
 
 });
 
+// Compile SCSS
+gulp.task('css:compile', function() {
+  return gulp.src('./scss/**/*.scss')
+    .pipe(sass.sync({
+      outputStyle: 'expanded'
+    }).on('error', sass.logError))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(gulp.dest('./css'))
+});
 
 
 // Minify CSS
