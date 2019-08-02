@@ -44,7 +44,7 @@ gulp.task('vendor', function() {
 });
 
 // Compile SCSS
-gulp.task('css:compile', function() {
+/*gulp.task('css:compile', function() {
   return gulp.src('./scss/**/*.scss')
     .pipe(sass.sync({
       outputStyle: 'expanded'
@@ -58,6 +58,7 @@ gulp.task('css:compile', function() {
     }))
     .pipe(gulp.dest('./css'))
 });
+*/
 
 // Minify CSS
 gulp.task('css:minify', ['css:compile'], function() {
